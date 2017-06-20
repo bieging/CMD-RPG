@@ -9,11 +9,12 @@ class Item
 {
 public:
 	std::string name;
-	std::vector<std::string> descriptions;
+	std::string mainDescription;
+	std::vector<std::string> extraDescriptions;
 	
 	double weight;
 	
-	Item();
+	Item(std::string, std::string, double);
 	~Item();
 private:
 	const int maxDescriptions = 10;

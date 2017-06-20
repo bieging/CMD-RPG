@@ -1,0 +1,11 @@
+Equipment 1.0
+	Desc - Class that hold all equipment of the player
+
+	Add an instance of this class to the player class
+	Has instances of jewels, armours of types ( Helmet, Body, Leggings, Boots, Gloves )
+
+	Method calculateStats() - Return all stats combined from the equipment ( attack power, defence, lifePoints bonus...)
+	Method getSpecificStat(EQUIPMENT_RING_1 / EQUIPMENT_HELMET, EQUIPMENT_BOOTS) - Return the stat of a specific piece of equipment
+
+Player 1.1
+	On constructor, call equipment->calculateStats();
