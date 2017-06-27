@@ -9,3 +9,138 @@ Equipment 1.0
 
 Player 1.1
 	On constructor, call equipment->calculateStats();
+
+
+Organize this!!
+
+CMD RPG Proposed Initial Tasks
+
+This will enable my mind to think about more tasks
+
+Create issues with this sections
+
+Game Tick
+	Create timer through which the game runs - 100ms
+		Everything must be executed during this time
+		If stuff is completed before this time, wait until 100ms have passed
+		But stuff can take longer to run, if needed (try to optimize code in this case)
+		
+NPC
+	Update class and header
+		Item drop(Item item);
+		std::vector<Item> dropAll();
+
+		verify if new item added is an extra bag. If so, put the bag in a list of bags
+		If inventory is full, add item to the next bag that has a free spot
+		Bag is an inventory similar item
+
+		If bag is lost or dropped, all its items will go along with it
+	
+ITEM
+	Create class and header
+		name - The item name
+		description[] - When super upgraded, an item can have extra descriptions
+		weight - How much it weights
+		
+		Constructor
+
+Future
+	Sub-types of items
+		Weapons
+		Armours
+		Accessories
+		Consumable
+		Others
+	NPC
+		Equipment - List of items the player has equipped
+		std::vector<std::pair> 
+		std::map<TYPE, double> elemental damage
+
+		TYPE = POISON, FIRE, EARTH, that stuff
+		double is the extra damage
+		
+	Mechanics
+		Combat - Think of a initial system and how this could work nicely
+			Implement, improve and repeat until I have a solid combat system
+			Fight each other
+			Search other NPC inventory
+			Loot any item the NPC could have
+
+		Items
+			Materials
+				Ores
+				Gems			
+				Wood
+				Herbs
+				
+			Food
+				Fish	
+				Meat
+				Fruits and Veggies
+				Misc
+				
+			Mounts
+			
+		NPC
+			agressive - will the monster attack the player without reason
+			attackPoints - how much damage the NPC deals based on combatLevel, equipment, enchantments
+			combatLevel - basic player level. Player will be able to access better areas, equip better items, deal more damage
+			
+			coinPouch - holds the NPC coins
+			zenirPouch - holds the NPC zenirs
+			
+			addCoins(int[] newCoins) - Receive an array of all types of coins and adds it to the NPC coinPouch. Does verification if a type surpassed the 1000 threshold and transform into next tier
+				int[] newCoins = 
+				{
+					nCopper = 512;
+					nSilver = 25;
+					nGold = 2;
+					nPlatinum = 0;
+					nMithril = 0;
+					nAdamantium = 0;
+				}
+				
+			removeCoins(int[] newCoins) - Similar to add coins, but removes them
+			addZenir(int[] newZenirs) - Similar to add coins
+			removeZenir(int[] newZenirs) - Similar to add zenirs, but removes them
+			
+		Level - gained by adquiring experience points
+			Combat - Experience can be adquired by killing monsters and completing quests
+				Melee Attack
+				Melee Strength
+				
+				Ranged Attack
+				Ranged Strength
+				
+				Magic Attack
+				Ranged Strength
+				
+				Defence
+			
+			Crafting
+			
+		Currency
+			nextTierThreshold = 1000;
+			
+			Many types of currency, and divided between coins and zenirs. Coins are less valuable and zenirs are extremely valuable ( don't really know if someone is going to adquire one someday )
+			
+			Must have 1000 of a currency to go to the next tier - 1000 copper coins will turn into 1 silver coin
+			
+			Coins
+				Copper
+				Silver
+				Gold
+				Platinum
+				Mithril
+				Adamantium
+				
+			Zenir
+				Sapphire
+				Emerald
+				Ruby
+				Diamond
+				
+			Ideas to consider
+				A zenir is made with shards - To make a Sapphire zenir, you must use a powerfull magic to fuse 100 sapphire shards into 1 zenir
+				Increase maximum number of coins before going to the next tier
+				Create a third and even greater tier
