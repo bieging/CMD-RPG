@@ -5,7 +5,9 @@
 
 #include <vector>
 
+#include "Log.h"
 #include "Item.h"
+#include "Inventory.h"
 
 class Player
 {
@@ -13,9 +15,12 @@ public:
 	Player();
 	~Player();
 private:
-	int inventoryMaxSize = 10;
+	Inventory m_mainInventory;
+	std::vector<Inventory> m_extraInventories;
 
-	std::vector<Item> inventory;
+	void addItem(Item item);
+	void removeItem(Item item);
+
 };
 
 #endif // !PLAYER_H

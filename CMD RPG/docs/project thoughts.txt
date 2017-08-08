@@ -1,3 +1,31 @@
+Tests 0.1
+	Create tasks to test stuff
+
+Inventory 0.1.1
+	Test functionality added in Inventory 0.1
+	Correct necessary things
+
+Log 0.2
+	writeLine method improvement
+		Create a vector of arguments based on the number of arguments
+		Call another method passing as parameters the string and the vector
+		The new method shall be called by all writeLine methods
+	Implement writeLine's 2 override
+
+	Test any new functionality
+
+Log 0.3
+	writeLine override that receives an undefined number of arguments (variadic??)
+	Search how to check if a std::string has a substring
+	Also, create a more efficient way to replace a substring with another one
+
+	Test any new functionality
+
+Log 0.4
+	Check out how TheCherno is doing his log class and get some ideas from it
+
+	Test any new functionality
+
 Game Tick
 	Create timer through which the game runs - 100ms
 		Everything must be executed during this time
