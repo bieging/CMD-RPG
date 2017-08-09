@@ -1,0 +1,53 @@
+College
+	Image Processing
+		Create Color Space based on sample faces
+		Apply colors from color on test image
+		
+	Explorer
+		Frustum Culling
+			Create Plane class from LightHouse
+			Create updateVisibleChunk function inside game class
+			updateVisibleChunk will be named updateNearChunks. Also create vector of nearChunks and visibleChunks
+			Compare pointToPlane from FrustumG class. Check only with left and right planes. Ignore Y distance. Plane position is the point to compare. This should be GTG. Probably will save half of the draw calls
+
+			Compare speed of calling updateVisibleChunk once the camera moves or for every render call
+		Mouse Picking
+		Face Culling
+		Improved world generation
+
+		Instancing
+
+
+
+
+
+
+Learning
+	Now
+		CPlusPlus
+		LearnCPP
+		The C++ Programming Language - Fourth Edition
+		The C++ Standard Library - Second Edition
+		Effective C++ - Third Edition
+		Effective STL
+		Effective Modern C++
+	Later
+		C++ Concurrency in Action
+		Exceptional C++: 47 Engineering Puzzles
+		More Exceptional C++: 40 New Engineering Puzzles
+		C++ Coding Standards: 101 Rules, Guidelines, and Best Practices
+		C++ Templates: The Complete Guide
+		Modern C++ Design: Generic Programming and Design Patterns Applied
+
+		API Design for C++
+		Large-Scale C++ Software Design
+
+
+
+
+
+
+Cool things to learn
+
+How to create Libs and DLLs
+How to create a project that uses CMake

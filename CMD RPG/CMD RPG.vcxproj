@@ -152,6 +152,7 @@
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -159,6 +160,10 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Weapon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="docs\rpg thoughts.txt" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="docs\project thoughts.txt" />
