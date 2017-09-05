@@ -16,6 +16,9 @@
     <Filter Include="Docs">
       <UniqueIdentifier>{9137c156-5b35-46d3-8324-4ca40c7c3169}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{8b6a0dee-33dd-479c-ad42-b067e59eff46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -36,6 +39,12 @@
     <ClCompile Include="Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -53,10 +62,22 @@
     <ClInclude Include="Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="docs\project thoughts.txt">
       <Filter>Docs</Filter>
     </Text>
+    <Text Include="docs\rpg thoughts.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monsters.rpg">
+      <Filter>Resources</Filter>
+    </None>
   </ItemGroup>
 </Project>

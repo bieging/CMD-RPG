@@ -12,7 +12,10 @@
 class Player
 {
 public:
+	int m_Level;
+
 	Player();
+	Player(int level);
 	~Player();
 private:
 	Inventory m_mainInventory;

@@ -5,7 +5,7 @@
 
 #include "Item.h"
 
-class Weapon : Item
+class Weapon
 {
 public:
 	double attackPower;

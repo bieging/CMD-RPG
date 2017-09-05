@@ -2,12 +2,12 @@
 
 Player::Player()
 {
-	this->level = 1;
+	m_Level = 1;
 }
 
 Player::Player(int level)
 {
-	this->level = level;
+	m_Level = level;
 }
 
 Player::~Player()

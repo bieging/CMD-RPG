@@ -8,7 +8,7 @@ Inventory::~Inventory()
 {
 }
 
-void Inventory::addItem(Item item)
+void Inventory::addItem(const Item& item)
 {
 	if (m_items.size() < m_size)
 	{
@@ -40,13 +40,13 @@ void Inventory::display()
 	for (size_t i = 0; i < m_items.size(); i++)
 	{
 		Log::writeLine("Item {0}", std::to_string(i));
-		Log::writeLine("Name: {0}", m_items.at(i).name);
+		Log::writeLine("Name: {0}", m_items.at(i).m_Name);
 		
 		Log::writeLine("Description(s)");
 		
-		for (size_t j = 0; j < m_items.at(j).descriptions.size(); j++)
+		for (size_t j = 0; j < m_items.at(j).m_ExtraDescriptions.size(); j++)
 		{
-			Log::writeLine("Name: {0}", m_items.at(j).descriptions.at(j));
+			Log::writeLine("Name: {0}", m_items.at(j).m_ExtraDescriptions.at(j));
 		}
 
 		Log::writeLine("Weight: {0}", std::to_string(m_items.at(i).weight));

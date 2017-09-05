@@ -16,7 +16,7 @@ public:
 	Inventory();
 	~Inventory();
 
-	void addItem(Item item);
+	void addItem(const Item& item);
 	void removeItem(int itemID);
 	void display();
 private:
