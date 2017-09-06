@@ -6,13 +6,18 @@ Game* rpg;
 
 int main()
 {
-	rpg = new Game();
-
 	std::cout << "Welcome to the first version of my CMD RPG!" << std::endl;
 
-	Log::writeLine("Teste {0}", std::to_string(12));
-	Log::breakLine();
-	Log::writeLine("Teste {0}");
+	rpg = new Game(GameState::START);
+
+	while (rpg->m_State != GameState::EXIT)
+	{
+		rpg->update();
+
+		rpg->processInput();
+
+		rpg->draw();
+	}
 
 	std::cin.get();
 	std::cin.get();

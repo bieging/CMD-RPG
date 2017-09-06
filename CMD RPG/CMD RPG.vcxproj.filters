@@ -79,5 +79,8 @@
     <None Include="Resources\monsters.rpg">
       <Filter>Resources</Filter>
     </None>
+    <None Include="Resources\weapons.rpg">
+      <Filter>Resources</Filter>
+    </None>
   </ItemGroup>
 </Project>

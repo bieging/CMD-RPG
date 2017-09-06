@@ -8,8 +8,8 @@
 class Weapon
 {
 public:
-	double attackPower;
-	double accuracy;
+	double m_AttackPower;
+	double m_Accuracy;
 	
 	Weapon();
 	~Weapon();

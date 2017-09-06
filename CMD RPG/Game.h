@@ -11,19 +11,31 @@
 #include "Log.h"
 #include "Entity.h"
 
+enum class GameState
+{
+	START,
+	RUNNING,
+	EXIT
+};
+
 class Game
 {
 public:
+	GameState m_State;
+
 	std::vector<Entity> entities;
 
-	Game();
+	Game(GameState state);
 	~Game();
 
 	void update();
+	void processInput();
+	void draw();
 private:
 	void init();
 
 	void loadMonsters();
+	void loadWeapons();
 };
 
 #endif // !GAME_H

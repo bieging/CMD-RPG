@@ -11,10 +11,11 @@ public:
 	std::string m_Name;
 	int m_LifePoints;
 	int m_AttackPower;
+	int m_Accuracy;
 	int m_Defence;
 	
 	Entity();
-	Entity(std::string name, int lifepoints, int attackPower, int defence);
+	Entity(std::string name, int lifepoints, int attackPower, int m_Accuracy, int defence);
 	~Entity();
 private:
 };

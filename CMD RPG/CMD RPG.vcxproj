@@ -172,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\monsters.rpg" />
+    <None Include="Resources\weapons.rpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

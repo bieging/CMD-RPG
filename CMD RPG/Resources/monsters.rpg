@@ -3,4 +3,11 @@ Monster list
 [Goblin]
 LifePoints=250
 AttackPower=100
+Accuracy=100
 Defence=15
+
+[Snake]
+LifePoints=75
+AttackPower=15
+Accuracy=35
+Defence=25
