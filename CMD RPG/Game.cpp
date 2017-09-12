@@ -29,17 +29,24 @@ void Game::draw()
 	m_State = GameState::EXIT;
 }
 
+void loadMonsters(Game* game);
+void loadWeapons(Game* game);
+
 void Game::init()
 {
 	ifs.open("Resources/monsters.rpg");
 
-	loadMonsters();
+	loadMonsters(this);
+
+	ifs.open("Resources/weapons.rpg");
+
+	loadWeapons(this);
 }
 
 ///
 ///	@brief: Loads all monster types from file
 ///
-void Game::loadMonsters()
+void loadMonsters(Game* game)
 {
 	if (ifs.is_open())
 	{
@@ -54,7 +61,11 @@ void Game::loadMonsters()
 				{
 					Entity entity;
 
-					entity.m_Name = line.substr(1, line.size() - 1);
+					int teste = 5;
+
+					int *ptr = &teste;
+
+					entity.m_Name = line.substr(1, line.size() - 2);
 
 					// Loads LifePoints
 					std::getline(ifs, line);
@@ -116,7 +127,7 @@ void Game::loadMonsters()
 						break;
 					}
 
-					entities.push_back(entity);
+					game->entities.push_back(entity);
 				}
 			}
 		}
@@ -134,7 +145,79 @@ void Game::loadMonsters()
 ///
 ///	@brief: Loads all weapons from file
 ///
-void Game::loadWeapons()
+static void loadWeapons(Game* game)
 {
+	if (ifs.is_open())
+	{
+		std::string line, name, value;
+		int pos;
 
+		while (std::getline(ifs, line))
+		{
+			if (line.size() > 0)
+			{
+				if (line.at(0) == '[')
+				{
+					std::unique_ptr<Weapon> weapon = std::make_unique<Weapon>();
+
+					weapon->m_Name = line.substr(1, line.size() - 2);
+
+					// Loads Description
+					std::getline(ifs, line);
+					pos = line.find_first_of('=');
+					name = line.substr(0, pos);
+					if (name == std::string("Description"))
+					{
+						value = line.substr(pos + 1, line.size());
+						weapon->m_MainDescription = value;
+					}
+					else
+					{
+						Log::writeLine(std::string("Weapon {0} incorrectly defined"), weapon->m_Name);
+						break;
+					}
+
+					// Loads AttackPower
+					std::getline(ifs, line);
+					pos = line.find_first_of('=');
+					name = line.substr(0, pos);
+					if (name == std::string("AttackPower"))
+					{
+						value = line.substr(pos + 1, line.size());
+						weapon->m_AttackPower = stoi(value);
+					}
+					else
+					{
+						Log::writeLine(std::string("Weapon {0} incorrectly defined"), weapon->m_Name);
+						break;
+					}
+
+					// Loads Accuracy
+					std::getline(ifs, line);
+					pos = line.find_first_of('=');
+					name = line.substr(0, pos);
+					if (name == std::string("Accuracy"))
+					{
+						value = line.substr(pos + 1, line.size());
+						weapon->m_Accuracy = stoi(value);
+					}
+					else
+					{
+						Log::writeLine(std::string("Weapon {0} incorrectly defined"), weapon->m_Name);
+						break;
+					}
+
+					game->items.weapons.push_back(std::move(weapon));
+				}
+			}
+		}
+
+		Log::writeLine(std::string("Weapons loaded"));
+
+		ifs.close();
+	}
+	else
+	{
+		Log::writeLine(std::string("Unable to load weapons file"));
+	}
 }

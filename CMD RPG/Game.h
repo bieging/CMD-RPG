@@ -7,9 +7,14 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <memory>
+#include <typeinfo>
 
 #include "Log.h"
+#include "ItemContainer.h"
 #include "Entity.h"
+#include "Item.h"
+#include "Weapon.h"
 
 enum class GameState
 {
@@ -25,6 +30,8 @@ public:
 
 	std::vector<Entity> entities;
 
+	ItemContainer items;
+
 	Game(GameState state);
 	~Game();
 
@@ -33,9 +40,6 @@ public:
 	void draw();
 private:
 	void init();
-
-	void loadMonsters();
-	void loadWeapons();
 };
 
 #endif // !GAME_H

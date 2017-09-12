@@ -1,5 +1,11 @@
 Monster list
 
 [Bronze Dagger]
+Description=A dagger made of pure bronze
 AttackPower=25
-Accuracy=10
+Accuracy=20
+
+[Bronze Sword]
+Description=A sword made of pure bronze. Be careful, it's very sharp
+AttackPower=35
+Accuracy=15
