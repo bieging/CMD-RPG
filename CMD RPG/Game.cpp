@@ -6,6 +6,7 @@ std::ofstream ofs;
 Game::Game(GameState state)
 {
 	m_State = state;
+	m_LastState = m_State;
 
 	init();
 }
@@ -26,7 +27,59 @@ void Game::processInput()
 
 void Game::draw()
 {
-	m_State = GameState::EXIT;
+	switch (m_State)
+	{
+		case GameState::START:
+			if (m_LastState != m_State)
+			{
+				system("CLS");
+				m_LastState = m_State;
+				std::string input;
+
+				Log::writeLine("Press 1 to open an existing character");
+				Log::writeLine("Press 2 to create a new character");
+				Log::writeLine("Press 3 to exit the game");
+
+				input = std::cin.get();
+
+				if (input == std::string("1"))
+				{
+					m_State = GameState::OPEN_CHARACTER;
+				}
+				else if (input == std::string("2"))
+				{
+					m_State = GameState::CREATE_CHARACTER;
+				}
+				else if (input == std::string("3"))
+				{
+					m_State = GameState::EXIT;
+				}
+			}
+			break;
+
+		case GameState::OPEN_CHARACTER:
+			if (m_LastState != m_State)
+			{
+				system("CLS");
+				m_LastState = m_State;
+
+				Log::writeLine("Opening existing characters");
+			}
+			break;
+
+		case GameState::CREATE_CHARACTER:
+			if (m_LastState != m_State)
+			{
+				system("CLS");
+				m_LastState = m_State;
+
+				Log::writeLine("Creating new character");
+			}
+			break;
+
+		default:
+			break;
+	}
 }
 
 void loadMonsters(Game* game);
@@ -207,7 +260,7 @@ static void loadWeapons(Game* game)
 						break;
 					}
 
-					game->items.weapons.push_back(std::move(weapon));
+					game->items.addWeapon(std::move(weapon));
 				}
 			}
 		}

@@ -5,6 +5,14 @@ Inventory 0.1.1
 	Test functionality added in Inventory 0.1
 	Correct necessary things
 
+Inventory 0.2
+	Create a ItemContainer instead of a list of items
+	Add a item limit to the ItemContainer class
+	Count how many items are in the container
+		Create a Add method for every type of item
+		Add the item and increment the item counter
+	Make necessary changes
+
 Log 0.2
 	writeLine method improvement
 		Create a vector of arguments based on the number of arguments

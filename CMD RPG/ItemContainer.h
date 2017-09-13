@@ -12,10 +12,18 @@
 class ItemContainer
 {
 public:
-	std::vector<std::unique_ptr<Weapon>> weapons;
+	bool hasLimit;
+
+	int itemLimit;
+	int itemCount;
 
 	ItemContainer();
 	~ItemContainer();
+
+	bool addWeapon(std::unique_ptr<Weapon> weapon);
+	bool removeWeapon(int weaponId);
+private:
+	std::vector<std::unique_ptr<Weapon>> weapons;
 };
 
 #endif // !ITEM_CONTAINER_H

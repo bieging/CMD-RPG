@@ -18,7 +18,14 @@
 
 enum class GameState
 {
+	SPLASH,
 	START,
+	CREATE_CHARACTER,
+	OPEN_CHARACTER,
+	GAME_MAIN,
+	GAME_BATTLE,
+	GAME_INVENTORY,
+	GAME_EQUIPMENT,
 	RUNNING,
 	EXIT
 };
@@ -40,6 +47,8 @@ public:
 	void draw();
 private:
 	void init();
+
+	GameState m_LastState;
 };
 
 #endif // !GAME_H

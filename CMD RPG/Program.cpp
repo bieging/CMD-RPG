@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 
 #include "Game.h"
 
@@ -8,7 +9,12 @@ int main()
 {
 	std::cout << "Welcome to the first version of my CMD RPG!" << std::endl;
 
-	rpg = new Game(GameState::START);
+	rpg = new Game(GameState::SPLASH);
+
+	std::cout << "Press enter to continue!" << std::endl;
+	std::cin.get();
+
+	rpg->m_State = GameState::START;
 
 	while (rpg->m_State != GameState::EXIT)
 	{
@@ -18,6 +24,8 @@ int main()
 
 		rpg->draw();
 	}
+
+	delete rpg;
 
 	std::cin.get();
 	std::cin.get();

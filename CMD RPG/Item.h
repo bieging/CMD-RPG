@@ -12,6 +12,7 @@ class Item
 {
 public:
 	double weight;
+	int m_Id;
 	std::string m_Name;
 	std::string m_MainDescription;
 	std::vector<std::string> m_ExtraDescriptions;
@@ -21,6 +22,7 @@ public:
 	Item(const Item& item);
 	void operator=(const Item& item)
 	{
+		m_Id = item.m_Id;
 		m_Name = item.m_Name;
 		m_MainDescription = item.m_MainDescription;
 		m_ExtraDescriptions = item.m_ExtraDescriptions;
