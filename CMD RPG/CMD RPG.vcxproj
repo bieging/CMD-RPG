@@ -173,6 +173,7 @@
     <Text Include="docs\project thoughts.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Execution.md" />
     <None Include="Resources\monsters.rpg" />
     <None Include="Resources\weapons.rpg" />
   </ItemGroup>

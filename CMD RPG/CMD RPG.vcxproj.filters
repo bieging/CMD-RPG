@@ -88,5 +88,8 @@
     <None Include="Resources\weapons.rpg">
       <Filter>Resources</Filter>
     </None>
+    <None Include="Execution.md">
+      <Filter>Docs</Filter>
+    </None>
   </ItemGroup>
 </Project>
