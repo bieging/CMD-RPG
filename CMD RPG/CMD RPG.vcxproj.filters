@@ -91,5 +91,8 @@
     <None Include="Execution.md">
       <Filter>Docs</Filter>
     </None>
+    <None Include="Resources\players.rpg">
+      <Filter>Resources</Filter>
+    </None>
   </ItemGroup>
 </Project>

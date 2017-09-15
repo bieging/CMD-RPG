@@ -27,8 +27,5 @@ int main()
 
 	delete rpg;
 
-	std::cin.get();
-	std::cin.get();
-
 	return 0;
 }

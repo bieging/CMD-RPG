@@ -12,18 +12,24 @@
 class Player
 {
 public:
-	int m_Level;
+	int m_Id;
+	
+	void setValues(int id, int level, std::string name);
+	void print();
 
 	Player();
-	Player(int level);
 	~Player();
+
 private:
+	int m_Level;
+
+	std::string m_Name;
+
 	Inventory m_mainInventory;
 	std::vector<Inventory> m_extraInventories;
 
 	void addItem(Item item);
 	void removeItem(Item item);
-
 };
 
 #endif // !PLAYER_H

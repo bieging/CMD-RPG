@@ -175,6 +175,7 @@
   <ItemGroup>
     <None Include="Execution.md" />
     <None Include="Resources\monsters.rpg" />
+    <None Include="Resources\players.rpg" />
     <None Include="Resources\weapons.rpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

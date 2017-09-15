@@ -15,6 +15,7 @@
 #include "Entity.h"
 #include "Item.h"
 #include "Weapon.h"
+#include "Player.h"
 
 enum class GameState
 {
@@ -22,12 +23,14 @@ enum class GameState
 	START,
 	CREATE_CHARACTER,
 	OPEN_CHARACTER,
+	LOADED_PLAYER,
 	GAME_MAIN,
 	GAME_BATTLE,
 	GAME_INVENTORY,
 	GAME_EQUIPMENT,
 	RUNNING,
-	EXIT
+	EXIT,
+	RESET_STATE
 };
 
 class Game
@@ -45,10 +48,17 @@ public:
 	void update();
 	void processInput();
 	void draw();
+
+	void addPlayer(std::shared_ptr<Player> player);
 private:
 	void init();
+	void printAvailablePlayers();
+	bool getPlayer(int id);
 
 	GameState m_LastState;
+
+	std::vector<std::shared_ptr<Player>> availablePlayers;
+	std::shared_ptr<Player> currentPlayer;
 };
 
 #endif // !GAME_H
