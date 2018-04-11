@@ -125,6 +125,143 @@ void Game::draw()
 			break;
 		}
 
+		case GameState::GAME_MAIN:
+			if (m_LastState != m_State)
+			{
+				system("CLS");
+				m_LastState = m_State;
+
+				std::string cmd;
+
+				Log::writeLine("Main Game Menu");
+				Log::writeLine("");
+				Log::writeLine("Choose an action:");
+				Log::writeLine("");
+				Log::writeLine("1 - Battle");
+				Log::writeLine("2 - View inventory");
+				Log::writeLine("3 - View equipment");
+				Log::writeLine("4 - Exit to main menu");
+
+				cmd = std::cin.get();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+				if (cmd == "1")
+				{
+					m_State = GameState::GAME_BATTLE;
+				}
+				else if (cmd == "2")
+				{
+					m_State = GameState::GAME_INVENTORY;
+				}
+				else if (cmd == "3")
+				{
+					m_State = GameState::GAME_EQUIPMENT;
+				}
+				else if (cmd == "4")
+				{
+					m_State = GameState::START;
+				}
+				else
+				{
+					Log::writeLine("Invalid input");
+					Log::waitForReturn();
+					m_State = GameState::RESET_STATE;
+				}
+				break;
+			}
+
+		case GameState::GAME_BATTLE:
+			if (m_LastState != m_State)
+			{
+				system("CLS");
+				m_LastState = m_State;
+
+				std::string cmd;
+
+				Log::writeLine("Battle - Chose a monster to fight");
+				Log::writeLine("");
+				Log::writeLine("Press \'B\' to return to the game menu");
+
+				cmd = std::cin.get();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+				if (cmd == "B")
+				{
+					m_State = GameState::GAME_MAIN;
+				}
+				else
+				{
+					Log::writeLine("Invalid input");
+					Log::waitForReturn();
+					m_State = GameState::RESET_STATE;
+				}
+
+				break;
+			}
+
+		case GameState::GAME_INVENTORY:
+			if (m_LastState != m_State)
+			{
+				system("CLS");
+				m_LastState = m_State;
+
+				std::string cmd;
+
+				Log::writeLine("Inventory");
+				Log::writeLine("");
+				Log::writeLine("Choose an item to use it");
+				Log::writeLine("");
+				Log::writeLine("Press \'B\' to return to the game menu");
+
+				cmd = std::cin.get();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+				if (cmd == "B")
+				{
+					m_State = GameState::GAME_MAIN;
+				}
+				else
+				{
+					Log::writeLine("Invalid input");
+					Log::waitForReturn();
+					m_State = GameState::RESET_STATE;
+				}
+
+				break;
+			}
+
+		case GameState::GAME_EQUIPMENT:
+			if (m_LastState != m_State)
+			{
+				system("CLS");
+				m_LastState = m_State;
+
+				std::string cmd;
+
+				Log::writeLine("Equipment");
+				Log::writeLine("");
+				Log::writeLine("Choose an item to use it");
+				Log::writeLine("");
+				Log::writeLine("Press \'B\' to return to the game menu");
+
+				cmd = std::cin.get();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+				if (cmd == "B")
+				{
+					m_State = GameState::GAME_MAIN;
+				}
+				else
+				{
+					Log::writeLine("Invalid input");
+					Log::waitForReturn();
+					m_State = GameState::RESET_STATE;
+				}
+
+				break;
+			}
+
+
 		case GameState::CREATE_CHARACTER:
 			if (m_LastState != m_State)
 			{
