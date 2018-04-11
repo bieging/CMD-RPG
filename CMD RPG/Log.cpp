@@ -63,3 +63,10 @@ void Log::breakLine()
 {
 	std::cout << std::endl;
 }
+
+void Log::waitForReturn()
+{
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+	//std::cin.get();
+}

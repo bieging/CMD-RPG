@@ -41,6 +41,7 @@ void Game::draw()
 				Log::writeLine("Press 3 to exit the game");
 
 				input = std::cin.get();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 				if (input == std::string("1"))
 				{
@@ -57,7 +58,7 @@ void Game::draw()
 				else
 				{
 					Log::writeLine("Invalid input");
-					std::cin.get();
+					Log::waitForReturn();
 					m_State = GameState::RESET_STATE;
 				}
 			}
@@ -75,8 +76,9 @@ void Game::draw()
 
 				printAvailablePlayers();
 				
-				std::cin.get();
-				std::cin >> playerIdStr;
+				playerIdStr = std::cin.get();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				
 				playerId = std::stoi(playerIdStr);
 
 				if (getPlayer(playerId))
@@ -86,10 +88,7 @@ void Game::draw()
 				else
 				{
 					Log::writeLine("Invalid player");
-
-					std::cin.get();
-					std::cin.get();
-
+					Log::waitForReturn();
 					m_State = GameState::RESET_STATE;
 				}
 			}
@@ -106,8 +105,8 @@ void Game::draw()
 			Log::writeLine("Loaded Player Successfully");
 			Log::writeLine("Press 'P' to play and 'E' to return to start menu");
 
-			std::cin.get();
 			cmd = std::cin.get();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 			if (cmd == "P")
 			{
@@ -120,10 +119,7 @@ void Game::draw()
 			else
 			{
 				Log::writeLine("Invalid input");
-
-				std::cin.get();
-				std::cin.get();
-
+				Log::waitForReturn();
 				m_State = GameState::RESET_STATE;
 			}
 			break;
@@ -136,10 +132,7 @@ void Game::draw()
 				m_LastState = m_State;
 
 				Log::writeLine("Create a new character");
-
-				std::cin.get();
-				std::cin.get();
-
+				Log::waitForReturn();
 				m_State = GameState::START;
 			}
 			break;

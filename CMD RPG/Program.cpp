@@ -12,8 +12,8 @@ int main()
 	rpg = new Game(GameState::SPLASH);
 
 	std::cout << "Press enter to continue!" << std::endl;
-	std::cin.get();
-
+	Log::waitForReturn();
+	
 	rpg->m_State = GameState::START;
 
 	while (rpg->m_State != GameState::EXIT)

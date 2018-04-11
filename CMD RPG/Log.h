@@ -18,6 +18,8 @@ public:
 	static void writeLine(std::string str, std::string arg0, std::string arg2, std::string arg3);
 
 	static void breakLine();
+
+	static void waitForReturn();
 private:
 };
 
